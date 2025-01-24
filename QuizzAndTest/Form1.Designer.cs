@@ -114,6 +114,7 @@
             this.Controls.Add(this.lbl_nom);
             this.Name = "Form1";
             this.Text = "Mon 1er formulaire";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

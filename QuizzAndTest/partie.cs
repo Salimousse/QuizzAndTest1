@@ -14,14 +14,14 @@ namespace QuizzAndTest
         public int nbquestion;
         public int numBonnereponse;
         public int numQuestion;
-        List<int> questions = new List<int>();
+        public List <question> ListeQuestions = new List<Question> ();
 
-        public partie(List<int> question)
+        public partie(List<int> questions)
         {
-            score = 0;
-            difficulte = 0;
-            nbquestion = 0;
-            this.questions = question;
+            this.score = 0;
+            this.difficulte = 0;
+            this.nbquestion = 0;
+            this.questions = questions;
             questions.Count();
 
         }
@@ -60,5 +60,26 @@ namespace QuizzAndTest
                 changerImg(pbimage, true, false);
             }
         }
+
+        public void changerQuestion(TextBox txt_affichage, CheckBox ckb_reponse1, CheckBox ckb_reponse2, CheckBox ckb_reponse3, CheckBox ckb_reponse4, CheckBox ckb_reponse5, Form formulaire, GroupBox gd_reponse, PictureBox pbimage)
+        {
+            if()
+            {
+                aleatoireReponse(txt_affichage, gd_reponse);
+
+            }
+            else
+            {
+
+            }
+
+        }
+        private void aleatoireReponse(TextBox txt_affichage , GroupBox gd_reponse)
+        {
+
+
+
+        }
     }
 }
+
