@@ -19,6 +19,9 @@ namespace QuizzAndTest
             difficulte.Items.Add("Moyen");
             difficulte.Items.Add("Difficile");
             difficulte.Items.Add("Enfer");
+            Jeu J = new Jeu();
+            J.Show();
+            this.Hide();
             
 
 

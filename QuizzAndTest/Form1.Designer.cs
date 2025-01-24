@@ -71,7 +71,7 @@
             // 
             // btn_valider
             // 
-            this.btn_valider.Location = new System.Drawing.Point(230, 305);
+            this.btn_valider.Location = new System.Drawing.Point(266, 241);
             this.btn_valider.Name = "btn_valider";
             this.btn_valider.Size = new System.Drawing.Size(75, 23);
             this.btn_valider.TabIndex = 6;
@@ -82,7 +82,7 @@
             // lbl_difficulte
             // 
             this.lbl_difficulte.AutoSize = true;
-            this.lbl_difficulte.Location = new System.Drawing.Point(98, 249);
+            this.lbl_difficulte.Location = new System.Drawing.Point(98, 190);
             this.lbl_difficulte.Name = "lbl_difficulte";
             this.lbl_difficulte.Size = new System.Drawing.Size(48, 13);
             this.lbl_difficulte.TabIndex = 7;
@@ -93,7 +93,7 @@
             // 
             this.difficulte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.difficulte.FormattingEnabled = true;
-            this.difficulte.Location = new System.Drawing.Point(200, 249);
+            this.difficulte.Location = new System.Drawing.Point(200, 182);
             this.difficulte.Name = "difficulte";
             this.difficulte.Size = new System.Drawing.Size(207, 21);
             this.difficulte.TabIndex = 8;
