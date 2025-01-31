@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.gd_reponse = new System.Windows.Forms.GroupBox();
+            this.ckb_reponse5 = new System.Windows.Forms.CheckBox();
+            this.ckb_reponse4 = new System.Windows.Forms.CheckBox();
+            this.ckb_reponse3 = new System.Windows.Forms.CheckBox();
+            this.ckb_reponse2 = new System.Windows.Forms.CheckBox();
+            this.ckb_reponse1 = new System.Windows.Forms.CheckBox();
             this.txt_temps = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_valider = new System.Windows.Forms.Button();
             this.txt_question = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.gd_reponse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,70 +55,70 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Quizz And Test";
             // 
-            // groupBox1
+            // gd_reponse
             // 
-            this.groupBox1.Controls.Add(this.checkBox5);
-            this.groupBox1.Controls.Add(this.checkBox4);
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Location = new System.Drawing.Point(22, 183);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(488, 197);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Réponses possibles";
+            this.gd_reponse.Controls.Add(this.ckb_reponse5);
+            this.gd_reponse.Controls.Add(this.ckb_reponse4);
+            this.gd_reponse.Controls.Add(this.ckb_reponse3);
+            this.gd_reponse.Controls.Add(this.ckb_reponse2);
+            this.gd_reponse.Controls.Add(this.ckb_reponse1);
+            this.gd_reponse.Location = new System.Drawing.Point(22, 183);
+            this.gd_reponse.Name = "gd_reponse";
+            this.gd_reponse.Size = new System.Drawing.Size(488, 197);
+            this.gd_reponse.TabIndex = 1;
+            this.gd_reponse.TabStop = false;
+            this.gd_reponse.Text = "Réponses possibles";
             // 
-            // checkBox5
+            // ckb_reponse5
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(7, 168);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(78, 17);
-            this.checkBox5.TabIndex = 4;
-            this.checkBox5.Text = "Réponse 5";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.ckb_reponse5.AutoSize = true;
+            this.ckb_reponse5.Location = new System.Drawing.Point(7, 168);
+            this.ckb_reponse5.Name = "ckb_reponse5";
+            this.ckb_reponse5.Size = new System.Drawing.Size(78, 17);
+            this.ckb_reponse5.TabIndex = 4;
+            this.ckb_reponse5.Text = "Réponse 5";
+            this.ckb_reponse5.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // ckb_reponse4
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(7, 129);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(78, 17);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "Réponse 4";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.ckb_reponse4.AutoSize = true;
+            this.ckb_reponse4.Location = new System.Drawing.Point(7, 129);
+            this.ckb_reponse4.Name = "ckb_reponse4";
+            this.ckb_reponse4.Size = new System.Drawing.Size(78, 17);
+            this.ckb_reponse4.TabIndex = 3;
+            this.ckb_reponse4.Text = "Réponse 4";
+            this.ckb_reponse4.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // ckb_reponse3
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(6, 95);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(78, 17);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Réponse 3";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.ckb_reponse3.AutoSize = true;
+            this.ckb_reponse3.Location = new System.Drawing.Point(6, 95);
+            this.ckb_reponse3.Name = "ckb_reponse3";
+            this.ckb_reponse3.Size = new System.Drawing.Size(78, 17);
+            this.ckb_reponse3.TabIndex = 2;
+            this.ckb_reponse3.Text = "Réponse 3";
+            this.ckb_reponse3.UseVisualStyleBackColor = true;
+            this.ckb_reponse3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
-            // checkBox2
+            // ckb_reponse2
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(7, 60);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(78, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Réponse 2";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.ckb_reponse2.AutoSize = true;
+            this.ckb_reponse2.Location = new System.Drawing.Point(7, 60);
+            this.ckb_reponse2.Name = "ckb_reponse2";
+            this.ckb_reponse2.Size = new System.Drawing.Size(78, 17);
+            this.ckb_reponse2.TabIndex = 1;
+            this.ckb_reponse2.Text = "Réponse 2";
+            this.ckb_reponse2.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // ckb_reponse1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(7, 20);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(78, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Réponse 1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckb_reponse1.AutoSize = true;
+            this.ckb_reponse1.Location = new System.Drawing.Point(7, 20);
+            this.ckb_reponse1.Name = "ckb_reponse1";
+            this.ckb_reponse1.Size = new System.Drawing.Size(78, 17);
+            this.ckb_reponse1.TabIndex = 0;
+            this.ckb_reponse1.Text = "Réponse 1";
+            this.ckb_reponse1.UseVisualStyleBackColor = true;
             // 
             // txt_temps
             // 
@@ -185,12 +185,12 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_temps);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gd_reponse);
             this.Controls.Add(this.label1);
             this.Name = "Jeu";
             this.Text = "Jeu";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gd_reponse.ResumeLayout(false);
+            this.gd_reponse.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -200,12 +200,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.GroupBox gd_reponse;
+        private System.Windows.Forms.CheckBox ckb_reponse5;
+        private System.Windows.Forms.CheckBox ckb_reponse4;
+        private System.Windows.Forms.CheckBox ckb_reponse3;
+        private System.Windows.Forms.CheckBox ckb_reponse2;
+        private System.Windows.Forms.CheckBox ckb_reponse1;
         private System.Windows.Forms.TextBox txt_temps;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
