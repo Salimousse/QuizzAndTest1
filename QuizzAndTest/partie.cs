@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing.Text;
+using System.IO.Ports;
 using System.Linq;
 using System.Security.AccessControl;
 using System.Text;
@@ -28,6 +29,7 @@ namespace QuizzAndTest
             this.ListeQuestions = questions;
             this.nbquestion = 0;
             questions.Count();
+
 
         }
 
@@ -107,30 +109,40 @@ namespace QuizzAndTest
                 int random = reponseAleatoire[randIndex];
                 reponseAleatoire.Remove(random);
                 string reponse = "";
+                switch (random)
+                {
+                    case 1:
+                        reponse = ListeQuestions[numQuestion].proposition1;
+                        break;
+                    case 2:
+                        reponse = ListeQuestions[numQuestion].proposition2;
+                        break;
+                    case 3:
+                        reponse = ListeQuestions[numQuestion].proposition3;
+                        break;
+                    case 4:
+                        reponse = ListeQuestions[numQuestion].proposition4;
+                        break;
+                    case 5:
+                        reponse = ListeQuestions[numQuestion].proposition5;
+                        break;
 
+
+
+
+
+                }
+                getCheckBox(i, gd_reponse).Text = reponse;
+                if (bonneReponse == random)
+
+                    reponseValidQuestion = i;
             }
 
-            switch (rnd)
-            {
-                case 1:
-                    if(rnd = 1)
-                   
-                    {
-                        
 
-
-                    }
-                    break;
-
-
-
-            }
-            getCheckBox(i, gd_reponse).Text = reponse;
-            if (bonneReponse == Random)
-            {
-                reponseValidQuestion = i;
-            }
-
+        }
+            
+        
+           
 
             private CheckBox getCheckBox(int indice, GroupBox gd_reponse)
         {
@@ -154,5 +166,4 @@ namespace QuizzAndTest
 
             }
     }
-}
 
