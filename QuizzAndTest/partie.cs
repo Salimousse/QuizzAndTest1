@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing.Text;
 using System.IO.Ports;
 using System.Linq;
+using System.Net.Configuration;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,10 +28,7 @@ namespace QuizzAndTest
             this.difficulte = 0;
             this.nbquestion = 0;
             this.ListeQuestions = questions;
-            this.nbquestion = 0;
-            questions.Count();
-
-
+            this.nbquestion = questions.Count();
         }
 
         private void changerImg(PictureBox pbimage, bool BonneReponse, bool raz)
@@ -61,16 +59,10 @@ namespace QuizzAndTest
         }
         public void validerReponse(int reponse, PictureBox pbimage)
         {
-            if (reponse == reponseValidQuestion)
-            {
-                calculerScore(true);
-                changerImg(pbimage, true, false);
-            }
-            else
-            {
-                calculerScore(false);
-                changerImg(pbimage, false, false);
-            }
+            bool bonneReponse = reponse == reponseValidQuestion;
+            calculerScore(bonneReponse);
+            changerImg(pbimage, bonneReponse, false);
+            
 
         }
         public void changerQuestion(TextBox txt_affichage, CheckBox ckb_reponse1, CheckBox ckb_reponse2, CheckBox ckb_reponse3, CheckBox ckb_reponse4, CheckBox ckb_reponse5, Form formulaire, GroupBox gd_reponse, PictureBox PbImage)
@@ -153,6 +145,27 @@ namespace QuizzAndTest
                 }
             }
             return null;
+        }
+
+        public void findepartie(DialogResult msg, PictureBox PbImage,Form FormulaireJeuActif)
+        {
+            msg = MessageBox.Show("Votre score est de " + score + "./r/n Voulez-vous rejouer ?", "Fin de partie", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            if (msg == DialogResult.Yes)
+            {
+                score = 0;
+                changerImg(PbImage, false, true);
+
+
+
+            }
+            else
+            {
+                Form1 Accueil = new Form1();
+                Accueil.Show();
+                FormulaireJeuActif.Hide();
+
+
+            }
         }
 
 

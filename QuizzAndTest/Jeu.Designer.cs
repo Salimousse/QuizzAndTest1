@@ -98,8 +98,6 @@
             this.ckb_reponse3.TabIndex = 2;
             this.ckb_reponse3.Text = "Réponse 3";
             this.ckb_reponse3.UseVisualStyleBackColor = true;
-            this.ckb_reponse3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
-            // 
             // ckb_reponse2
             // 
             this.ckb_reponse2.AutoSize = true;
@@ -161,9 +159,7 @@
             this.txt_affichage.Multiline = true;
             this.txt_affichage.Name = "txt_affichage";
             this.txt_affichage.Size = new System.Drawing.Size(488, 52);
-            this.txt_affichage.TabIndex = 6;
-            this.txt_affichage.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
+            this.txt_affichage.TabIndex = 6;// 
             // lbl_numero
             // 
             this.lbl_numero.AutoSize = true;
@@ -172,7 +168,6 @@
             this.lbl_numero.Size = new System.Drawing.Size(54, 13);
             this.lbl_numero.TabIndex = 7;
             this.lbl_numero.Text = "Questions";
-            this.lbl_numero.Click += new System.EventHandler(this.label3_Click);
             // 
             // Jeu
             // 

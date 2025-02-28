@@ -19,16 +19,9 @@ namespace QuizzAndTest
             difficulte.Items.Add("Moyen");
             difficulte.Items.Add("Difficile");
             difficulte.Items.Add("Enfer");
-            Jeu J = new Jeu();
-            J.Show();
-            this.Hide();
+            
             
 
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -48,14 +41,11 @@ namespace QuizzAndTest
             {
                 MessageBox.Show("Aucun prénom n'est rentré", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            
 
+            Jeu J = new Jeu();
+            J.Show();
+            this.Hide();
 
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
 
         }
 
@@ -79,9 +69,5 @@ namespace QuizzAndTest
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

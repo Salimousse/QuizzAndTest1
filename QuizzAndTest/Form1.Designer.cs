@@ -87,7 +87,6 @@
             this.lbl_difficulte.Size = new System.Drawing.Size(48, 13);
             this.lbl_difficulte.TabIndex = 7;
             this.lbl_difficulte.Text = "Difficulté";
-            this.lbl_difficulte.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // difficulte
             // 
@@ -114,7 +113,6 @@
             this.Controls.Add(this.lbl_nom);
             this.Name = "Form1";
             this.Text = "Mon 1er formulaire";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

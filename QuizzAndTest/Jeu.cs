@@ -14,9 +14,9 @@ namespace QuizzAndTest
 {
     public partial class Jeu : Form
     {
-        int reponseQuestion;
+        int reponseQuestion = 0 ; 
         partie partie;
-        public Jeu()
+        public Jeu()    
         {
             InitializeComponent();
             
@@ -42,21 +42,6 @@ namespace QuizzAndTest
         
 
 
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_valider_Click(object sender, EventArgs e)
         {
             partie.validerReponse(reponseQuestion, pb_question);
@@ -64,7 +49,7 @@ namespace QuizzAndTest
             partie.changerQuestion(txt_affichage, ckb_reponse1, ckb_reponse2, ckb_reponse3, ckb_reponse4, ckb_reponse5, this, gd_reponse, pb_question);
             lbl_numero.Text = (partie.numQuestion + 1).ToString();
             reponseQuestion = 0;
-
+           
         }
     }
 }
