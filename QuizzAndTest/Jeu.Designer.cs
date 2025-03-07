@@ -35,12 +35,18 @@
             this.ckb_reponse3 = new System.Windows.Forms.CheckBox();
             this.ckb_reponse2 = new System.Windows.Forms.CheckBox();
             this.ckb_reponse1 = new System.Windows.Forms.CheckBox();
-            this.txt_temps = new System.Windows.Forms.TextBox();
+            this.txt_timer = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pb_question = new System.Windows.Forms.PictureBox();
             this.btn_valider = new System.Windows.Forms.Button();
             this.txt_affichage = new System.Windows.Forms.TextBox();
             this.lbl_numero = new System.Windows.Forms.Label();
+            this.txt_joueur = new System.Windows.Forms.TextBox();
+            this.txt_diff = new System.Windows.Forms.TextBox();
+            this.lbl_joueur = new System.Windows.Forms.Label();
+            this.lbl_difficulte = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.gd_reponse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_question)).BeginInit();
             this.SuspendLayout();
@@ -98,6 +104,7 @@
             this.ckb_reponse3.TabIndex = 2;
             this.ckb_reponse3.Text = "Réponse 3";
             this.ckb_reponse3.UseVisualStyleBackColor = true;
+            // 
             // ckb_reponse2
             // 
             this.ckb_reponse2.AutoSize = true;
@@ -118,17 +125,17 @@
             this.ckb_reponse1.Text = "Réponse 1";
             this.ckb_reponse1.UseVisualStyleBackColor = true;
             // 
-            // txt_temps
+            // txt_timer
             // 
-            this.txt_temps.Location = new System.Drawing.Point(660, 58);
-            this.txt_temps.Name = "txt_temps";
-            this.txt_temps.Size = new System.Drawing.Size(174, 20);
-            this.txt_temps.TabIndex = 2;
+            this.txt_timer.Location = new System.Drawing.Point(660, 27);
+            this.txt_timer.Name = "txt_timer";
+            this.txt_timer.Size = new System.Drawing.Size(174, 20);
+            this.txt_timer.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(657, 31);
+            this.label2.Location = new System.Drawing.Point(657, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 3;
@@ -137,7 +144,7 @@
             // pb_question
             // 
             this.pb_question.Image = global::QuizzAndTest.Properties.Resources.Interrogation;
-            this.pb_question.Location = new System.Drawing.Point(660, 100);
+            this.pb_question.Location = new System.Drawing.Point(660, 53);
             this.pb_question.Name = "pb_question";
             this.pb_question.Size = new System.Drawing.Size(174, 195);
             this.pb_question.TabIndex = 4;
@@ -159,7 +166,8 @@
             this.txt_affichage.Multiline = true;
             this.txt_affichage.Name = "txt_affichage";
             this.txt_affichage.Size = new System.Drawing.Size(488, 52);
-            this.txt_affichage.TabIndex = 6;// 
+            this.txt_affichage.TabIndex = 6;
+            // 
             // lbl_numero
             // 
             this.lbl_numero.AutoSize = true;
@@ -169,22 +177,78 @@
             this.lbl_numero.TabIndex = 7;
             this.lbl_numero.Text = "Questions";
             // 
+            // txt_joueur
+            // 
+            this.txt_joueur.Location = new System.Drawing.Point(660, 333);
+            this.txt_joueur.Name = "txt_joueur";
+            this.txt_joueur.Size = new System.Drawing.Size(162, 20);
+            this.txt_joueur.TabIndex = 8;
+            // 
+            // txt_diff
+            // 
+            this.txt_diff.Location = new System.Drawing.Point(660, 395);
+            this.txt_diff.Name = "txt_diff";
+            this.txt_diff.Size = new System.Drawing.Size(162, 20);
+            this.txt_diff.TabIndex = 9;
+            // 
+            // lbl_joueur
+            // 
+            this.lbl_joueur.AutoSize = true;
+            this.lbl_joueur.Location = new System.Drawing.Point(657, 312);
+            this.lbl_joueur.Name = "lbl_joueur";
+            this.lbl_joueur.Size = new System.Drawing.Size(39, 13);
+            this.lbl_joueur.TabIndex = 10;
+            this.lbl_joueur.Text = "Joueur";
+            this.lbl_joueur.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // lbl_difficulte
+            // 
+            this.lbl_difficulte.AutoSize = true;
+            this.lbl_difficulte.Location = new System.Drawing.Point(657, 367);
+            this.lbl_difficulte.Name = "lbl_difficulte";
+            this.lbl_difficulte.Size = new System.Drawing.Size(48, 13);
+            this.lbl_difficulte.TabIndex = 11;
+            this.lbl_difficulte.Text = "Difficulté";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(657, 251);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(161, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Temps de réponse à la question ";
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(660, 268);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(158, 23);
+            this.progressBar.TabIndex = 13;
+            // 
             // Jeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(846, 450);
+            this.Controls.Add(this.progressBar);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_difficulte);
+            this.Controls.Add(this.lbl_joueur);
+            this.Controls.Add(this.txt_diff);
+            this.Controls.Add(this.txt_joueur);
             this.Controls.Add(this.lbl_numero);
             this.Controls.Add(this.txt_affichage);
             this.Controls.Add(this.btn_valider);
             this.Controls.Add(this.pb_question);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txt_temps);
+            this.Controls.Add(this.txt_timer);
             this.Controls.Add(this.gd_reponse);
             this.Controls.Add(this.label1);
             this.Name = "Jeu";
             this.Text = "Jeu";
+            this.Load += new System.EventHandler(this.Jeu_Load);
             this.gd_reponse.ResumeLayout(false);
             this.gd_reponse.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_question)).EndInit();
@@ -202,11 +266,17 @@
         private System.Windows.Forms.CheckBox ckb_reponse3;
         private System.Windows.Forms.CheckBox ckb_reponse2;
         private System.Windows.Forms.CheckBox ckb_reponse1;
-        private System.Windows.Forms.TextBox txt_temps;
+        private System.Windows.Forms.TextBox txt_timer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pb_question;
         private System.Windows.Forms.Button btn_valider;
         private System.Windows.Forms.TextBox txt_affichage;
         private System.Windows.Forms.Label lbl_numero;
+        private System.Windows.Forms.TextBox txt_joueur;
+        private System.Windows.Forms.TextBox txt_diff;
+        private System.Windows.Forms.Label lbl_joueur;
+        private System.Windows.Forms.Label lbl_difficulte;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }

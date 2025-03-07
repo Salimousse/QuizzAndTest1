@@ -4,6 +4,7 @@ using System.Drawing.Text;
 using System.IO.Ports;
 using System.Linq;
 using System.Net.Configuration;
+using System.Runtime.CompilerServices;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,14 +22,23 @@ namespace QuizzAndTest
         public int numQuestion;
         public List<question> ListeQuestions;
         public int reponseValidQuestion;
+        public string nom;
+        public string prenom;
+        public string difficulteChoisie;
+        public int TimerPartie;
 
-        public partie(List<question> questions)
+
+        public partie(List<question> questions , string prenom , string nom , string Difficulte)
         {
             this.score = 0;
             this.difficulte = 0;
             this.nbquestion = 0;
             this.ListeQuestions = questions;
             this.nbquestion = questions.Count();
+            this.prenom = prenom;
+            this.nom = nom;
+            this.difficulteChoisie = Difficulte;
+            this.TimerPartie = 0;
         }
 
         private void changerImg(PictureBox pbimage, bool BonneReponse, bool raz)
