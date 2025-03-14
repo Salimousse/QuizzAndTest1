@@ -46,7 +46,7 @@
             this.lbl_joueur = new System.Windows.Forms.Label();
             this.lbl_difficulte = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.pgb_tpsQuestion = new System.Windows.Forms.ProgressBar();
             this.gd_reponse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_question)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +84,7 @@
             this.ckb_reponse5.TabIndex = 4;
             this.ckb_reponse5.Text = "Réponse 5";
             this.ckb_reponse5.UseVisualStyleBackColor = true;
+            this.ckb_reponse5.Click += new System.EventHandler(this.ckb_reponse1_Click);
             // 
             // ckb_reponse4
             // 
@@ -94,6 +95,7 @@
             this.ckb_reponse4.TabIndex = 3;
             this.ckb_reponse4.Text = "Réponse 4";
             this.ckb_reponse4.UseVisualStyleBackColor = true;
+            this.ckb_reponse4.Click += new System.EventHandler(this.ckb_reponse1_Click);
             // 
             // ckb_reponse3
             // 
@@ -104,6 +106,7 @@
             this.ckb_reponse3.TabIndex = 2;
             this.ckb_reponse3.Text = "Réponse 3";
             this.ckb_reponse3.UseVisualStyleBackColor = true;
+            this.ckb_reponse3.Click += new System.EventHandler(this.ckb_reponse1_Click);
             // 
             // ckb_reponse2
             // 
@@ -114,6 +117,7 @@
             this.ckb_reponse2.TabIndex = 1;
             this.ckb_reponse2.Text = "Réponse 2";
             this.ckb_reponse2.UseVisualStyleBackColor = true;
+            this.ckb_reponse2.Click += new System.EventHandler(this.ckb_reponse1_Click);
             // 
             // ckb_reponse1
             // 
@@ -124,6 +128,7 @@
             this.ckb_reponse1.TabIndex = 0;
             this.ckb_reponse1.Text = "Réponse 1";
             this.ckb_reponse1.UseVisualStyleBackColor = true;
+            this.ckb_reponse1.Click += new System.EventHandler(this.ckb_reponse1_Click);
             // 
             // txt_timer
             // 
@@ -219,12 +224,13 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Temps de réponse à la question ";
             // 
-            // progressBar
+            // pgb_tpsQuestion
             // 
-            this.progressBar.Location = new System.Drawing.Point(660, 268);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(158, 23);
-            this.progressBar.TabIndex = 13;
+            this.pgb_tpsQuestion.Location = new System.Drawing.Point(660, 268);
+            this.pgb_tpsQuestion.Maximum = 15;
+            this.pgb_tpsQuestion.Name = "pgb_tpsQuestion";
+            this.pgb_tpsQuestion.Size = new System.Drawing.Size(158, 23);
+            this.pgb_tpsQuestion.TabIndex = 13;
             // 
             // Jeu
             // 
@@ -232,7 +238,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(846, 450);
-            this.Controls.Add(this.progressBar);
+            this.Controls.Add(this.pgb_tpsQuestion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_difficulte);
             this.Controls.Add(this.lbl_joueur);
@@ -277,6 +283,6 @@
         private System.Windows.Forms.Label lbl_joueur;
         private System.Windows.Forms.Label lbl_difficulte;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.ProgressBar pgb_tpsQuestion;
     }
 }

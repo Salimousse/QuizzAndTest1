@@ -19,20 +19,21 @@ namespace QuizzAndTest
             difficulte.Items.Add("Moyen");
             difficulte.Items.Add("Difficile");
             difficulte.Items.Add("Enfer");
-            
-            
+
+           
+
 
 
         }
 
+   
+
         private void btn_valider_Click(object sender, EventArgs e)
         {
-            string result = "Bonjour";
-            result += " ";
-            result += txt_nom.Text;
-            result += " ";
-            result += txt_prenom.Text;
-            if(txt_nom.Text == "")
+            
+
+
+            if (txt_nom.Text == "")
             {
                 MessageBox.Show("Aucun nom n'est rentré", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
@@ -42,11 +43,13 @@ namespace QuizzAndTest
                 MessageBox.Show("Aucun prénom n'est rentré", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            Jeu J = new Jeu();
+
+
+            Jeu J = new Jeu(txt_nom.Text,txt_prenom.Text, difficulte.SelectedItem.ToString());
             J.Show();
             this.Hide();
 
-
+            
         }
 
         private void difficulte_SelectedIndexChanged(object sender, EventArgs e)

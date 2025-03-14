@@ -58,8 +58,9 @@
     <Compile Include="Jeu.Designer.cs">
       <DependentUpon>Jeu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\partie.cs" />
     <Compile Include="Model\question.cs" />
-    <Compile Include="partie.cs" />
+    <Compile Include="Model\SousFormulaire.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

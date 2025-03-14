@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QuizzAndTest.Model
 {
-    public class question
+    public class Question
     {
         public string enonce;
         public int reponse;
@@ -19,8 +17,7 @@ namespace QuizzAndTest.Model
         public string proposition4;
         public string proposition5;
 
-
-        public question(string enonce, int reponse, int difficulte, string proposition1, string proposition2, string proposition3, string proposition4, string proposition5)
+        public Question(string enonce, int reponse, int difficulte, string proposition1, string proposition2, string proposition3, string proposition4, string proposition5)
         {
             this.enonce = enonce;
             this.reponse = reponse;
@@ -31,6 +28,7 @@ namespace QuizzAndTest.Model
             this.proposition4 = proposition4;
             this.proposition5 = proposition5;
         }
+
+
     }
-    
 }
