@@ -37,7 +37,6 @@
             this.ckb_reponse1 = new System.Windows.Forms.CheckBox();
             this.txt_timer = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pb_question = new System.Windows.Forms.PictureBox();
             this.btn_valider = new System.Windows.Forms.Button();
             this.txt_affichage = new System.Windows.Forms.TextBox();
             this.lbl_numero = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.lbl_difficulte = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pgb_tpsQuestion = new System.Windows.Forms.ProgressBar();
+            this.pb_question = new System.Windows.Forms.PictureBox();
             this.gd_reponse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_question)).BeginInit();
             this.SuspendLayout();
@@ -146,15 +146,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Temps total";
             // 
-            // pb_question
-            // 
-            this.pb_question.Image = global::QuizzAndTest.Properties.Resources.Interrogation;
-            this.pb_question.Location = new System.Drawing.Point(660, 53);
-            this.pb_question.Name = "pb_question";
-            this.pb_question.Size = new System.Drawing.Size(174, 195);
-            this.pb_question.TabIndex = 4;
-            this.pb_question.TabStop = false;
-            // 
             // btn_valider
             // 
             this.btn_valider.Location = new System.Drawing.Point(387, 395);
@@ -232,12 +223,21 @@
             this.pgb_tpsQuestion.Size = new System.Drawing.Size(158, 23);
             this.pgb_tpsQuestion.TabIndex = 13;
             // 
+            // pb_question
+            // 
+            this.pb_question.Image = global::QuizzAndTest.Properties.Resources.Interrogation;
+            this.pb_question.Location = new System.Drawing.Point(660, 53);
+            this.pb_question.Name = "pb_question";
+            this.pb_question.Size = new System.Drawing.Size(174, 195);
+            this.pb_question.TabIndex = 4;
+            this.pb_question.TabStop = false;
+            // 
             // Jeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(846, 450);
+            this.ClientSize = new System.Drawing.Size(800, 438);
             this.Controls.Add(this.pgb_tpsQuestion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_difficulte);
@@ -252,6 +252,7 @@
             this.Controls.Add(this.txt_timer);
             this.Controls.Add(this.gd_reponse);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Jeu";
             this.Text = "Jeu";
             this.Load += new System.EventHandler(this.Jeu_Load);

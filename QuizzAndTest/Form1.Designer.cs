@@ -103,7 +103,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 438);
             this.Controls.Add(this.difficulte);
             this.Controls.Add(this.lbl_difficulte);
             this.Controls.Add(this.btn_valider);
@@ -111,8 +111,10 @@
             this.Controls.Add(this.txt_nom);
             this.Controls.Add(this.lbl_prenom);
             this.Controls.Add(this.lbl_nom);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Mon 1er formulaire";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
