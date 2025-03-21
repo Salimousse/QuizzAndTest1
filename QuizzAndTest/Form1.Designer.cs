@@ -35,12 +35,13 @@
             this.btn_valider = new System.Windows.Forms.Button();
             this.lbl_difficulte = new System.Windows.Forms.Label();
             this.difficulte = new System.Windows.Forms.ComboBox();
+            this.btn_fermer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_nom
             // 
             this.lbl_nom.AutoSize = true;
-            this.lbl_nom.Location = new System.Drawing.Point(98, 66);
+            this.lbl_nom.Location = new System.Drawing.Point(273, 99);
             this.lbl_nom.Name = "lbl_nom";
             this.lbl_nom.Size = new System.Drawing.Size(29, 13);
             this.lbl_nom.TabIndex = 1;
@@ -49,7 +50,7 @@
             // lbl_prenom
             // 
             this.lbl_prenom.AutoSize = true;
-            this.lbl_prenom.Location = new System.Drawing.Point(98, 125);
+            this.lbl_prenom.Location = new System.Drawing.Point(273, 158);
             this.lbl_prenom.Name = "lbl_prenom";
             this.lbl_prenom.Size = new System.Drawing.Size(43, 13);
             this.lbl_prenom.TabIndex = 2;
@@ -57,21 +58,21 @@
             // 
             // txt_nom
             // 
-            this.txt_nom.Location = new System.Drawing.Point(200, 63);
+            this.txt_nom.Location = new System.Drawing.Point(375, 96);
             this.txt_nom.Name = "txt_nom";
             this.txt_nom.Size = new System.Drawing.Size(207, 20);
             this.txt_nom.TabIndex = 4;
             // 
             // txt_prenom
             // 
-            this.txt_prenom.Location = new System.Drawing.Point(200, 118);
+            this.txt_prenom.Location = new System.Drawing.Point(375, 151);
             this.txt_prenom.Name = "txt_prenom";
             this.txt_prenom.Size = new System.Drawing.Size(207, 20);
             this.txt_prenom.TabIndex = 5;
             // 
             // btn_valider
             // 
-            this.btn_valider.Location = new System.Drawing.Point(266, 241);
+            this.btn_valider.Location = new System.Drawing.Point(441, 274);
             this.btn_valider.Name = "btn_valider";
             this.btn_valider.Size = new System.Drawing.Size(75, 23);
             this.btn_valider.TabIndex = 6;
@@ -82,7 +83,7 @@
             // lbl_difficulte
             // 
             this.lbl_difficulte.AutoSize = true;
-            this.lbl_difficulte.Location = new System.Drawing.Point(98, 190);
+            this.lbl_difficulte.Location = new System.Drawing.Point(273, 223);
             this.lbl_difficulte.Name = "lbl_difficulte";
             this.lbl_difficulte.Size = new System.Drawing.Size(48, 13);
             this.lbl_difficulte.TabIndex = 7;
@@ -92,18 +93,29 @@
             // 
             this.difficulte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.difficulte.FormattingEnabled = true;
-            this.difficulte.Location = new System.Drawing.Point(200, 182);
+            this.difficulte.Location = new System.Drawing.Point(375, 215);
             this.difficulte.Name = "difficulte";
             this.difficulte.Size = new System.Drawing.Size(207, 21);
             this.difficulte.TabIndex = 8;
             this.difficulte.SelectedIndexChanged += new System.EventHandler(this.difficulte_SelectedIndexChanged);
+            // 
+            // btn_fermer
+            // 
+            this.btn_fermer.Location = new System.Drawing.Point(774, 92);
+            this.btn_fermer.Name = "btn_fermer";
+            this.btn_fermer.Size = new System.Drawing.Size(28, 20);
+            this.btn_fermer.TabIndex = 9;
+            this.btn_fermer.Text = "X";
+            this.btn_fermer.UseVisualStyleBackColor = true;
+            this.btn_fermer.Click += new System.EventHandler(this.btn_fermer_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 438);
+            this.ClientSize = new System.Drawing.Size(940, 475);
+            this.Controls.Add(this.btn_fermer);
             this.Controls.Add(this.difficulte);
             this.Controls.Add(this.lbl_difficulte);
             this.Controls.Add(this.btn_valider);
@@ -128,6 +140,7 @@
         private System.Windows.Forms.Button btn_valider;
         private System.Windows.Forms.Label lbl_difficulte;
         private System.Windows.Forms.ComboBox difficulte;
+        private System.Windows.Forms.Button btn_fermer;
     }
 }
 

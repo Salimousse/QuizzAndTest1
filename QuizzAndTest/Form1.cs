@@ -19,8 +19,9 @@ namespace QuizzAndTest
             difficulte.Items.Add("Moyen");
             difficulte.Items.Add("Difficile");
             difficulte.Items.Add("Enfer");
-
            
+
+
 
 
 
@@ -45,11 +46,11 @@ namespace QuizzAndTest
 
 
 
-            Jeu J = new Jeu(txt_nom.Text,txt_prenom.Text, difficulte.SelectedItem.ToString());
-            J.Show();
+            (System.Windows.Forms.Application.OpenForms["Menu"] as Menu).openChildForm(new Jeu(txt_nom.Text, txt_prenom.Text, difficulte.SelectedItem.ToString()));
             this.Hide();
+       
 
-            
+
         }
 
         private void difficulte_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,6 +76,11 @@ namespace QuizzAndTest
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_fermer_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

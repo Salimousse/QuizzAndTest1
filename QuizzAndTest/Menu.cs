@@ -15,7 +15,8 @@ namespace QuizzAndTest
         public Menu()
         {
             InitializeComponent();
-            (System.Windows.Forms.Application.OpenForms["Menu"] as Menu).openChildform();
+            
+
         }
 
         public Form activeForm = null;
@@ -32,13 +33,20 @@ namespace QuizzAndTest
             pnl_SF.Tag = formEnfant;
             formEnfant.BringToFront();
             formEnfant.Show();
-            openChildForm(new Form1());
+           
         }
+
        
 
 
         private void questionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            openChildForm(new Form2());
+        }
+
+        private void demarrerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form1());
 
         }
     }

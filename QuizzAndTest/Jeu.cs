@@ -99,5 +99,11 @@ namespace QuizzAndTest
             ((CheckBox)sender).Checked = true;
             reponseQuestion = Convert.ToInt32(((CheckBox)sender).Name.Substring(((CheckBox)sender).Name.Length - 1, 1));
         }
+
+        private void btn_fermer_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }

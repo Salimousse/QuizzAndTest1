@@ -47,6 +47,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pgb_tpsQuestion = new System.Windows.Forms.ProgressBar();
             this.pb_question = new System.Windows.Forms.PictureBox();
+            this.btn_fermer = new System.Windows.Forms.Button();
             this.gd_reponse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_question)).BeginInit();
             this.SuspendLayout();
@@ -232,12 +233,23 @@
             this.pb_question.TabIndex = 4;
             this.pb_question.TabStop = false;
             // 
+            // btn_fermer
+            // 
+            this.btn_fermer.Location = new System.Drawing.Point(863, 27);
+            this.btn_fermer.Name = "btn_fermer";
+            this.btn_fermer.Size = new System.Drawing.Size(28, 28);
+            this.btn_fermer.TabIndex = 14;
+            this.btn_fermer.Text = "X";
+            this.btn_fermer.UseVisualStyleBackColor = true;
+            this.btn_fermer.Click += new System.EventHandler(this.btn_fermer_Click);
+            // 
             // Jeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 438);
+            this.ClientSize = new System.Drawing.Size(940, 475);
+            this.Controls.Add(this.btn_fermer);
             this.Controls.Add(this.pgb_tpsQuestion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_difficulte);
@@ -285,5 +297,6 @@
         private System.Windows.Forms.Label lbl_difficulte;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ProgressBar pgb_tpsQuestion;
+        private System.Windows.Forms.Button btn_fermer;
     }
 }
