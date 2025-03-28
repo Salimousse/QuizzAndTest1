@@ -11,7 +11,7 @@ using MySqlConnector;
 
 namespace QuizzAndTest.Controllers
 {
-    internal class QuestionBDD
+    public class QuestionBDD
     {
 
         public DataTable GetListeQuestion()
@@ -21,7 +21,7 @@ namespace QuizzAndTest.Controllers
             
             try
             {
-                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM QUESTION;", conn.MySqlCo))
+                using (MySqlCommand cmd = new MySqlCommand("SELECT IDQUESTION , ENONCEQUESTION as question , D.IDDIFFICULTE , LABELDIFFICULTE as difficulte  FROM QUESTION inner join DIFFICULTE D on QUESTION.IDDIFFICULTE = D.IDDIFFICULTE group by IDQUESTION;", conn.MySqlCo))
                 {
                     conn.MySqlCo.Open();
                     MySqlDataReader reader = cmd.ExecuteReader();
@@ -34,6 +34,30 @@ namespace QuizzAndTest.Controllers
             }
             conn.MySqlCo.Close();
             conn.MySqlCo = null;
+            return dt;
+
+
+        }
+        public DataTable GetListeQuestionRecherche(string rqtSql , int diff)
+        {
+            dt = new DataTable();
+            try
+            {
+                Connection conn = new Connection();
+                using (MySqlCommand cmd = new MySqlCommand(rqtSql, conn.connection))
+                {
+                    conn.connection.Open();
+                    cmd.Parameters.AddWithValue("@rechercheMot", "%" + rechercheMot + "%");
+                    cmd.Parameters.AddWithValue("@difficulte", difficulte);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    dt.Load(reader);
+
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Erreur 3", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign, true);
+            }
             return dt;
 
 

@@ -16,9 +16,9 @@ namespace QuizzAndTest.Model
         private string mdpBDD;
 
 
-        private void InitConnection(string serveurBDD, string nomBDD, string loginBDD, string mdpBDD)
+        private void InitConnection()
         {
-            mySqlCo = new MySqlConnection("SERVER=" + serveurBDD + ";DATA<BASE=" + nomBDD + ";UID=" + loginBDD + ";PASSWORD=" + mdpBDD + ";");
+            mySqlCo = new MySqlConnection("Server=" + serveurBDD + ";Database=" + nomBDD + ";User ID=" + loginBDD + ";Password=" + mdpBDD);
         }
 
         public connectionBDD()
@@ -26,8 +26,8 @@ namespace QuizzAndTest.Model
             serveurBDD = "192.168.10.16";
             nomBDD = "settouti_salim_bdd_slam2_tp3";
             loginBDD = "settouti_salim";
-            mdpBDD = "CEjsNe26";
-            InitConnection(serveurBDD, nomBDD, loginBDD, mdpBDD);
+            mdpBDD = "CEjsNE26";
+            InitConnection();
         }
 
         public MySqlConnection MySqlCo { get { return mySqlCo; } set { mySqlCo = value; } }

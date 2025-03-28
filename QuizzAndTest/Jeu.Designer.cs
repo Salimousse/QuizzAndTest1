@@ -164,6 +164,7 @@
             this.txt_affichage.Name = "txt_affichage";
             this.txt_affichage.Size = new System.Drawing.Size(488, 52);
             this.txt_affichage.TabIndex = 6;
+            this.txt_affichage.Text = " ";
             // 
             // lbl_numero
             // 
