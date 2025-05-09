@@ -44,6 +44,9 @@ namespace QuizzAndTest
             dgv_questions.Columns["question"].Width = 190;
             dgv_questions.Columns["difficulte"].Width = 190;
             //Attention il faut mettre le nom des alias à la place du nom des colonnes en cas d’utilisation d’alias dans la requête SQL.
+
+           
+
         }
 
         private void pnl_bdd_Paint(object sender, PaintEventArgs e)
@@ -75,6 +78,11 @@ namespace QuizzAndTest
             QuestionBDD dt_listeQuestions = new QuestionBDD();
             DataView dv = new DataView(dt_listeQuestions.GetListeQuestionRecherche("", txt_recherche.Text, cb_difficulte.SelectedIndex));
             dgv_questions.DataSource = dv;
+
+        }
+
+        private void cb_difficulte_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

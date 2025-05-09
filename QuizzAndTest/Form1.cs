@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuizzAndTest.Controllers;
+using QuizzAndTest.Model;
 
 namespace QuizzAndTest
 {
@@ -15,19 +17,25 @@ namespace QuizzAndTest
         public Form1()
         {
             InitializeComponent();
-            difficulte.Items.Add("Facile");
-            difficulte.Items.Add("Moyen");
-            difficulte.Items.Add("Difficile");
-            difficulte.Items.Add("Enfer");
+            chargerDifficultes();
            
 
 
+        }
+        private void chargerDifficultes()
+        {
+            List<Question> ListeQuestions = new List<Question>();
+            Difficulte difficulte = new Difficulte();
+            DataTable dt = difficulte.GetListeDifficulte();
 
+            foreach (DataRow row in dt.Rows)
+            {
+               cb_difficulte.Items.Add(row["LABELDIFFICULTE"].ToString());
 
-
+            }
         }
 
-   
+
 
         private void btn_valider_Click(object sender, EventArgs e)
         {
@@ -46,7 +54,7 @@ namespace QuizzAndTest
 
 
 
-            (System.Windows.Forms.Application.OpenForms["Menu"] as Menu).openChildForm(new Jeu(txt_nom.Text, txt_prenom.Text, difficulte.SelectedItem.ToString()));
+            (System.Windows.Forms.Application.OpenForms["Menu"] as Menu).openChildForm(new Jeu(txt_nom.Text, txt_prenom.Text, cb_difficulte.SelectedItem.ToString()));
             this.Hide();
        
 
@@ -55,7 +63,7 @@ namespace QuizzAndTest
 
         private void difficulte_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (difficulte.SelectedItem == "Enfer")
+            if (cb_difficulte.SelectedItem == "Enfer")
             {
                 this.BackColor = Color.Red;
                 lbl_nom.Font = new Font(lbl_nom.Font, FontStyle.Bold);

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuizzAndTest.Controllers;
 using QuizzAndTest.Model;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -27,22 +28,77 @@ namespace QuizzAndTest
         private void Init()
         {
             InitializeComponent();
-            List<Question> ListeQuestions = new List<Question>();
-            ListeQuestions.Add(new Question("Quelle est la capitale de la France ?", 1, 1, "Paris", "Londres", "Berlin", "Madrid", "Rome"));
-            ListeQuestions.Add(new Question("Quelle est la capitale de l'Espagne ?", 4, 1, "Paris", "Londres", "Berlin", "Madrid", "Rome"));
-            ListeQuestions.Add(new Question("Quelle est la capitale de l'Allemagne ?", 3, 1, "Paris", "Londres", "Berlin", "Madrid", "Rome"));
-            ListeQuestions.Add(new Question("Quelle est la capitale de l'Italie ?", 5, 1, "Paris", "Londres", "Berlin", "Madrid", "Rome"));
-            ListeQuestions.Add(new Question("Quelle est la capitale de l'Angleterre ?", 2, 1, "Paris", "Londres", "Berlin", "Madrid", "Rome"));
-            ListeQuestions.Add(new Question("Quelle est la capitale de la Belgique ?", 1, 1, "Bruxelles", "Londres", "Berlin", "Madrid", "Rome"));
-            ListeQuestions.Add(new Question("Quelle est la capitale de la Suisse ?", 2, 1, "Bruxelles", "Berne", "Berlin", "Madrid", "Rome"));
-            ListeQuestions.Add(new Question("Quelle est la capitale du Luxembourg ?", 3, 1, "Bruxelles", "Berne", "Luxembourg", "Madrid", "Rome"));
-            ListeQuestions.Add(new Question("Quelle est la capitale du Portugal ?", 4, 1, "Bruxelles", "Berne", "Luxembourg", "Lisbonne", "Rome"));
-            ListeQuestions.Add(new Question("Quelle est la capitale de l'Autriche ?", 5, 1, "Bruxelles", "Berne", "Luxembourg", "Lisbonne", "Vienne"));
+            List<Question> ListeQuestions = chargerQuestionsBDD(txt_diff.Text);
+
             partie = new Partie(ListeQuestions);
             partie.changerQuestion(txt_affichage, ckb_reponse1, ckb_reponse2, ckb_reponse3, ckb_reponse4, ckb_reponse5, this, gd_reponse, pb_question, null);
             partie.gestionTimer(txt_timer, pgb_tpsQuestion, txt_affichage, ckb_reponse1, ckb_reponse2, ckb_reponse3, ckb_reponse4, ckb_reponse5, this,gd_reponse,pb_question,lbl_numero,null);
+            
         }
-        
+        private List<Question> chargerQuestionsBDD(string difficulte)
+        {
+            List<Question> ListeQuestions = new List<Question>();
+
+            try
+            {
+                // Instanciez QuestionBDD pour accéder aux questions
+                QuestionBDD questionBDD = new QuestionBDD();
+
+                // Récupérez l'ID de la difficulté
+                int difficulteId = obtenirIdDifficulte(difficulte);
+
+                // Récupérez les questions depuis la base de données
+                DataTable dt = questionBDD.GetListeQuestionsParDifficulte(difficulteId);
+
+                // Parcourez les résultats et créez des objets Question
+                foreach (DataRow row in dt.Rows)
+                {
+                    ListeQuestions.Add(new Question(
+                        row["ENONCEQUESTION"].ToString(),          // Énoncé de la question
+                        Convert.ToInt32(row["BONREPQUESTION"]),      // Indice de la bonne réponse
+                        difficulteId,                              // Difficulté
+                        row["REPONSE1QUESTION"].ToString(),            // Proposition 1
+                        row["REPONSE2QUESTION"].ToString(),            // Proposition 2
+                        row["REPONSE3QUESTION"].ToString(),            // Proposition 3
+                        row["REPONSE4QUESTION"].ToString(),            // Proposition 4
+                        row["REPONSE5QUESTION"].ToString()             // Proposition 5
+                    ));
+                }
+
+                // Vérifiez si des questions ont été récupérées
+                if (ListeQuestions.Count == 0)
+                {
+                    MessageBox.Show("Aucune question trouvée pour cette difficulté.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erreur lors du chargement des questions : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return ListeQuestions;
+        }
+
+        private int obtenirIdDifficulte(string difficulte)
+        {
+            // Exemple de mapping entre le label de la difficulté et son ID
+            switch (difficulte)
+            {
+                case "Facile":
+                    return 1;
+                case "Moyen":
+                    return 2;
+                case "Difficile":
+                    return 3;
+                case "Enfer":
+                    return 4;
+                default:
+                    return 0; // ID par défaut si la difficulté est inconnue
+            }
+        }
+            
+
+
         public Jeu ()
         {
             Init();

@@ -101,6 +101,7 @@
             this.cb_difficulte.Name = "cb_difficulte";
             this.cb_difficulte.Size = new System.Drawing.Size(218, 21);
             this.cb_difficulte.TabIndex = 0;
+            this.cb_difficulte.SelectedIndexChanged += new System.EventHandler(this.cb_difficulte_SelectedIndexChanged);
             this.cb_difficulte.SelectionChangeCommitted += new System.EventHandler(this.cb_difficulte_SelectionChangeCommitted);
             // 
             // btn_fermer

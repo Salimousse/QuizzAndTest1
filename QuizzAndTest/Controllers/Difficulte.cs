@@ -18,7 +18,7 @@ namespace QuizzAndTest.Controllers
             connectionBDD conn = new connectionBDD();
             try
             {
-                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM DIFFICULTE", conn.MySqlCo))
+                using (MySqlCommand cmd = new MySqlCommand("SELECT IDDIFFICULTE, LABELDIFFICULTE FROM DIFFICULTE", conn.MySqlCo))
                 {
                     conn.MySqlCo.Open();
                     MySqlDataReader reader = cmd.ExecuteReader();

@@ -34,7 +34,7 @@
             this.txt_prenom = new System.Windows.Forms.TextBox();
             this.btn_valider = new System.Windows.Forms.Button();
             this.lbl_difficulte = new System.Windows.Forms.Label();
-            this.difficulte = new System.Windows.Forms.ComboBox();
+            this.cb_difficulte = new System.Windows.Forms.ComboBox();
             this.btn_fermer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -89,15 +89,15 @@
             this.lbl_difficulte.TabIndex = 7;
             this.lbl_difficulte.Text = "Difficulté";
             // 
-            // difficulte
+            // cb_difficulte
             // 
-            this.difficulte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.difficulte.FormattingEnabled = true;
-            this.difficulte.Location = new System.Drawing.Point(375, 215);
-            this.difficulte.Name = "difficulte";
-            this.difficulte.Size = new System.Drawing.Size(207, 21);
-            this.difficulte.TabIndex = 8;
-            this.difficulte.SelectedIndexChanged += new System.EventHandler(this.difficulte_SelectedIndexChanged);
+            this.cb_difficulte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_difficulte.FormattingEnabled = true;
+            this.cb_difficulte.Location = new System.Drawing.Point(375, 215);
+            this.cb_difficulte.Name = "cb_difficulte";
+            this.cb_difficulte.Size = new System.Drawing.Size(207, 21);
+            this.cb_difficulte.TabIndex = 8;
+            this.cb_difficulte.SelectedIndexChanged += new System.EventHandler(this.difficulte_SelectedIndexChanged);
             // 
             // btn_fermer
             // 
@@ -116,7 +116,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(940, 475);
             this.Controls.Add(this.btn_fermer);
-            this.Controls.Add(this.difficulte);
+            this.Controls.Add(this.cb_difficulte);
             this.Controls.Add(this.lbl_difficulte);
             this.Controls.Add(this.btn_valider);
             this.Controls.Add(this.txt_prenom);
@@ -139,7 +139,7 @@
         private System.Windows.Forms.TextBox txt_prenom;
         private System.Windows.Forms.Button btn_valider;
         private System.Windows.Forms.Label lbl_difficulte;
-        private System.Windows.Forms.ComboBox difficulte;
+        private System.Windows.Forms.ComboBox cb_difficulte;
         private System.Windows.Forms.Button btn_fermer;
     }
 }
