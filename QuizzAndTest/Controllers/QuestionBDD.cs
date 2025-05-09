@@ -13,12 +13,11 @@ namespace QuizzAndTest.Controllers
 {
     public class QuestionBDD
     {
-
         public DataTable GetListeQuestion()
         {
             DataTable dt = new DataTable();
             connectionBDD conn = new connectionBDD();
-            
+
             try
             {
                 using (MySqlCommand cmd = new MySqlCommand("SELECT IDQUESTION , ENONCEQUESTION as question , D.IDDIFFICULTE , LABELDIFFICULTE as difficulte  FROM QUESTION inner join DIFFICULTE D on QUESTION.IDDIFFICULTE = D.IDDIFFICULTE group by IDQUESTION;", conn.MySqlCo))
@@ -32,41 +31,41 @@ namespace QuizzAndTest.Controllers
             {
                 MessageBox.Show(e.ToString(), "Erreur 3", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign, true);
             }
-            conn.MySqlCo.Close();
-            conn.MySqlCo = null;
+            finally
+            {
+                conn.MySqlCo.Close();
+                conn.MySqlCo = null;
+            }
             return dt;
-
-
         }
-        public DataTable GetListeQuestionRecherche(string rqtSql , int diff)
+
+        public DataTable GetListeQuestionRecherche(string rqtSql, string rechercheMot, int difficulte)
         {
-            dt = new DataTable();
+            DataTable dt = new DataTable();
+            connectionBDD conn = new connectionBDD();
+
             try
             {
-                Connection conn = new Connection();
-                using (MySqlCommand cmd = new MySqlCommand(rqtSql, conn.connection))
+                using (MySqlCommand cmd = new MySqlCommand(rqtSql, conn.MySqlCo))
                 {
-                    conn.connection.Open();
+                    conn.MySqlCo.Open();
                     cmd.Parameters.AddWithValue("@rechercheMot", "%" + rechercheMot + "%");
                     cmd.Parameters.AddWithValue("@difficulte", difficulte);
                     MySqlDataReader reader = cmd.ExecuteReader();
                     dt.Load(reader);
-
                 }
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString(), "Erreur 3", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign, true);
             }
+            finally
+            {
+                conn.MySqlCo.Close();
+                conn.MySqlCo = null;
+            }
             return dt;
-
-
         }
-
-
-
-
-
     }
 
 

@@ -21,6 +21,7 @@ namespace QuizzAndTest
             QuestionBDD dt_listeQuestions = new QuestionBDD();
             dv = new DataView(dt_listeQuestions.GetListeQuestion());
             dgv_questions.DataSource = dv;
+
             Difficulte dt_ListeDifficulte = new Difficulte();
             DataTable dt = dt_ListeDifficulte.GetListeDifficulte();
             DataRow workRow = dt.NewRow();
@@ -58,6 +59,23 @@ namespace QuizzAndTest
         private void btn_fermer_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cb_difficulte_SelectionChangeCommitted(object sender, EventArgs e)
+
+        {
+            QuestionBDD dt_listeQuestions = new QuestionBDD();
+            DataView dv = new DataView(dt_listeQuestions.GetListeQuestionRecherche("SELECT ", txt_recherche.Text, cb_difficulte.SelectedIndex));
+            dgv_questions.DataSource = dv;
+
+        }
+
+        private void txt_recherche_TextChanged(object sender, EventArgs e)
+        {
+            QuestionBDD dt_listeQuestions = new QuestionBDD();
+            DataView dv = new DataView(dt_listeQuestions.GetListeQuestionRecherche("", txt_recherche.Text, cb_difficulte.SelectedIndex));
+            dgv_questions.DataSource = dv;
+
         }
     }
 }
