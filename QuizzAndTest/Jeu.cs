@@ -81,22 +81,33 @@ namespace QuizzAndTest
 
         private int obtenirIdDifficulte(string difficulte)
         {
-            // Exemple de mapping entre le label de la difficulté et son ID
-            switch (difficulte)
+            int difficulteId = 0; // Valeur par défaut si la difficulté n'est pas trouvée
+            try
             {
-                case "Facile":
-                    return 1;
-                case "Moyen":
-                    return 2;
-                case "Difficile":
-                    return 3;
-                case "Enfer":
-                    return 4;
-                default:
-                    return 0; // ID par défaut si la difficulté est inconnue
+                // Instanciez la classe Difficulte pour accéder à la base de données
+                Difficulte difficulteController = new Difficulte();
+
+                // Récupérez la liste des difficultés depuis la base de données
+                DataTable dt = difficulteController.GetListeDifficulte();
+
+                // Parcourez les lignes pour trouver l'ID correspondant au label
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["LABELDIFFICULTE"].ToString().Equals(difficulte, StringComparison.OrdinalIgnoreCase))
+                    {
+                        difficulteId = Convert.ToInt32(row["IDDIFFICULTE"]);
+                        break;
+                    }
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erreur lors de la récupération de l'ID de la difficulté : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return difficulteId;
         }
-            
+
 
 
         public Jeu ()
